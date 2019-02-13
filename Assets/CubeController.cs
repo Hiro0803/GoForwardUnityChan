@@ -32,13 +32,25 @@ public class CubeController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    void OnCollisionEnter(Collision collision)
+    /*
+    void OnCollisionEnter2D(Collision collision)
     {
         if (gameObject.tag == "Cube")
         {
             sound01.PlayOneShot(sound01.clip);
         }
     }
+*/
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Cube")
+        {
+            sound01.PlayOneShot(sound01.clip);
+        }
 
+        if (collision.gameObject.tag == "ground")
+        {
+            sound01.PlayOneShot(sound01.clip);
+        }
+    }
 }
